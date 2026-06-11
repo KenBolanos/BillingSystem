@@ -27,5 +27,15 @@ namespace BillingSystem
             AddCustomerForm frm1 = new AddCustomerForm();
             frm1.Show();
         }
+
+        private void dgvCustomers_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+
+        }
+
+        private void CustomerListForm_Load(object sender, EventArgs e)
+        {
+            
+        }
     }
 }

@@ -66,6 +66,7 @@
             dgvCustomers.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
             dgvCustomers.Size = new Size(758, 325);
             dgvCustomers.TabIndex = 1;
+            dgvCustomers.CellContentClick += dgvCustomers_CellContentClick;
             // 
             // CustomerID
             // 
@@ -173,6 +174,7 @@
             Name = "CustomerListForm";
             StartPosition = FormStartPosition.CenterScreen;
             Text = "Billing System - Customer List";
+            Load += CustomerListForm_Load;
             ((System.ComponentModel.ISupportInitialize)dgvCustomers).EndInit();
             ResumeLayout(false);
             PerformLayout();
