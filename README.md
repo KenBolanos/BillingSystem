@@ -1,2 +1,1 @@
-Billing System
-C#.NET & MySQL Training
+Activity 1.2: Version Control Setup — completed
