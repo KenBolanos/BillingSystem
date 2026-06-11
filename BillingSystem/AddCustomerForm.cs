@@ -1,0 +1,34 @@
+﻿using System;
+using System.Collections.Generic;
+using System.ComponentModel;
+using System.Data;
+using System.Drawing;
+using System.Text;
+using System.Windows.Forms;
+
+namespace BillingSystem
+{
+    public partial class AddCustomerForm : Form
+    {
+        public AddCustomerForm()
+        {
+            InitializeComponent();
+        }
+
+        private void btnBack_Click(object sender, EventArgs e)
+        {
+            this.Close();
+        }
+
+        private void btnClear_Click(object sender, EventArgs e)
+        {
+            txtAddress.Clear();
+            txtBalance.Text = "0.00";
+            txtContact.Clear();
+            txtEmail.Clear();
+            txtFullName.Clear();
+
+            txtFullName.Focus();
+        }
+    }
+}
