@@ -54,7 +54,7 @@ namespace BillingSystem
                                (@FullName, @Address, @ContactNumber, @Email, @Balance, @Status);";
 
                     using (var cmd = new MySqlCommand(sql, conn))
-                    {
+                    { 
                         // Each @parameter safely carries one value from the form
                         cmd.Parameters.AddWithValue("@FullName", txtFullName.Text.Trim());
                         cmd.Parameters.AddWithValue("@Address", txtAddress.Text.Trim());
