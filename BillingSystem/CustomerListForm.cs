@@ -25,9 +25,18 @@ namespace BillingSystem
 
         private void btnLogout_Click(object sender, EventArgs e)
         {
-            LoginForm frm1 = new LoginForm();
-            frm1.Show();
-            this.Close();
+            DialogResult logout = MessageBox.Show(
+                "Are you sure you want to logout?",
+                "Confirm Logout",
+                MessageBoxButtons.YesNo,
+                MessageBoxIcon.Warning);
+
+            if (logout == DialogResult.Yes)
+            {
+                LoginForm frm1 = new LoginForm();
+                frm1.Show();
+                this.Close();
+            }
         }
 
         private void btnAdd_Click(object sender, EventArgs e)

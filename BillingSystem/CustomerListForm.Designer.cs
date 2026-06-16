@@ -56,15 +56,16 @@
             // 
             // dgvCustomers
             // 
-            dgvCustomers.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
+            dgvCustomers.AllowUserToAddRows = false;
             dgvCustomers.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             dgvCustomers.Columns.AddRange(new DataGridViewColumn[] { CustomerID, FullName, Address, ContactNumber, Email, Balance });
             dgvCustomers.Location = new Point(12, 55);
             dgvCustomers.Name = "dgvCustomers";
             dgvCustomers.ReadOnly = true;
+            dgvCustomers.RowHeadersVisible = false;
             dgvCustomers.RowHeadersWidth = 51;
             dgvCustomers.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
-            dgvCustomers.Size = new Size(758, 325);
+            dgvCustomers.Size = new Size(709, 325);
             dgvCustomers.TabIndex = 1;
             dgvCustomers.CellContentClick += dgvCustomers_CellContentClick;
             dgvCustomers.CellContentDoubleClick += dgvCustomers_CellDoubleClick;
@@ -76,6 +77,7 @@
             CustomerID.MinimumWidth = 6;
             CustomerID.Name = "CustomerID";
             CustomerID.ReadOnly = true;
+            CustomerID.Width = 118;
             // 
             // FullName
             // 
@@ -83,6 +85,7 @@
             FullName.MinimumWidth = 6;
             FullName.Name = "FullName";
             FullName.ReadOnly = true;
+            FullName.Width = 117;
             // 
             // Address
             // 
@@ -90,6 +93,7 @@
             Address.MinimumWidth = 6;
             Address.Name = "Address";
             Address.ReadOnly = true;
+            Address.Width = 118;
             // 
             // ContactNumber
             // 
@@ -97,6 +101,7 @@
             ContactNumber.MinimumWidth = 6;
             ContactNumber.Name = "ContactNumber";
             ContactNumber.ReadOnly = true;
+            ContactNumber.Width = 117;
             // 
             // Email
             // 
@@ -104,6 +109,7 @@
             Email.MinimumWidth = 6;
             Email.Name = "Email";
             Email.ReadOnly = true;
+            Email.Width = 118;
             // 
             // Balance
             // 
@@ -111,10 +117,11 @@
             Balance.MinimumWidth = 6;
             Balance.Name = "Balance";
             Balance.ReadOnly = true;
+            Balance.Width = 117;
             // 
             // txtSearch
             // 
-            txtSearch.Location = new Point(472, 20);
+            txtSearch.Location = new Point(430, 20);
             txtSearch.Name = "txtSearch";
             txtSearch.Size = new Size(180, 27);
             txtSearch.TabIndex = 2;
@@ -124,7 +131,7 @@
             // btnSearch
             // 
             btnSearch.BackColor = Color.Lime;
-            btnSearch.Location = new Point(658, 20);
+            btnSearch.Location = new Point(616, 20);
             btnSearch.Name = "btnSearch";
             btnSearch.Size = new Size(94, 29);
             btnSearch.TabIndex = 3;
@@ -157,7 +164,7 @@
             // btnLogout
             // 
             btnLogout.BackColor = Color.Red;
-            btnLogout.Location = new Point(647, 400);
+            btnLogout.Location = new Point(598, 400);
             btnLogout.Name = "btnLogout";
             btnLogout.Size = new Size(123, 41);
             btnLogout.TabIndex = 6;
@@ -169,7 +176,7 @@
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(782, 453);
+            ClientSize = new Size(731, 453);
             Controls.Add(btnLogout);
             Controls.Add(btnDelete);
             Controls.Add(btnAdd);
