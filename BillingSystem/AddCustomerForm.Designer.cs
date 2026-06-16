@@ -129,13 +129,11 @@
             // 
             // txtBalance
             // 
-            txtBalance.Enabled = false;
             txtBalance.Location = new Point(191, 252);
             txtBalance.Name = "txtBalance";
             txtBalance.Size = new Size(196, 27);
             txtBalance.TabIndex = 10;
             txtBalance.Text = "0.00";
-            txtBalance.TextAlign = HorizontalAlignment.Center;
             // 
             // btnSave
             // 
