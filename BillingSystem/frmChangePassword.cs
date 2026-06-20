@@ -25,6 +25,7 @@ namespace BillingSystem
             ApplyTheme();
         }
 
+        //validation of the textboxes and checking for password requirements
         private void CheckPasswords(object sender, EventArgs e)
         {
             string currentpass = txtCurrentPassword.Text;
