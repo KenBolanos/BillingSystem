@@ -53,6 +53,7 @@
             lblStatusTime = new ToolStripStatusLabel();
             statusTimer = new System.Windows.Forms.Timer(components);
             btnChangePassword = new Button();
+            btnViewBilling = new Button();
             ((System.ComponentModel.ISupportInitialize)dgvCustomers).BeginInit();
             statusStrip1.SuspendLayout();
             SuspendLayout();
@@ -76,12 +77,10 @@
             dgvCustomers.Location = new Point(12, 55);
             dgvCustomers.Name = "dgvCustomers";
             dgvCustomers.ReadOnly = true;
-            dgvCustomers.RowHeadersVisible = false;
             dgvCustomers.RowHeadersWidth = 51;
             dgvCustomers.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
             dgvCustomers.Size = new Size(829, 325);
-            dgvCustomers.TabIndex = 1;
-            dgvCustomers.CellContentClick += dgvCustomers_CellContentClick;
+            dgvCustomers.TabIndex = 2;
             dgvCustomers.CellContentDoubleClick += dgvCustomers_CellDoubleClick;
             dgvCustomers.SelectionChanged += dgvCustomers_SelectionChanged;
             // 
@@ -132,7 +131,7 @@
             txtSearch.Location = new Point(432, 20);
             txtSearch.Name = "txtSearch";
             txtSearch.Size = new Size(180, 27);
-            txtSearch.TabIndex = 2;
+            txtSearch.TabIndex = 1;
             txtSearch.TextChanged += txtSearch_TextChanged;
             txtSearch.KeyPress += txtSearch_KeyPress;
             // 
@@ -161,7 +160,7 @@
             // btnDelete
             // 
             btnDelete.BackColor = Color.Yellow;
-            btnDelete.Location = new Point(180, 400);
+            btnDelete.Location = new Point(212, 400);
             btnDelete.Name = "btnDelete";
             btnDelete.Size = new Size(123, 41);
             btnDelete.TabIndex = 5;
@@ -172,9 +171,9 @@
             // btnLogout
             // 
             btnLogout.BackColor = Color.Red;
-            btnLogout.Location = new Point(718, 11);
+            btnLogout.Location = new Point(847, 13);
             btnLogout.Name = "btnLogout";
-            btnLogout.Size = new Size(123, 41);
+            btnLogout.Size = new Size(166, 41);
             btnLogout.TabIndex = 6;
             btnLogout.Text = "Logout";
             btnLogout.UseVisualStyleBackColor = false;
@@ -183,9 +182,9 @@
             // btnAnalytics
             // 
             btnAnalytics.BackColor = Color.Orange;
-            btnAnalytics.Location = new Point(847, 132);
+            btnAnalytics.Location = new Point(847, 61);
             btnAnalytics.Name = "btnAnalytics";
-            btnAnalytics.Size = new Size(108, 41);
+            btnAnalytics.Size = new Size(166, 41);
             btnAnalytics.TabIndex = 7;
             btnAnalytics.Text = "Analytics";
             btnAnalytics.UseVisualStyleBackColor = false;
@@ -194,9 +193,9 @@
             // btnExportExcel
             // 
             btnExportExcel.BackColor = Color.OliveDrab;
-            btnExportExcel.Location = new Point(847, 257);
+            btnExportExcel.Location = new Point(847, 249);
             btnExportExcel.Name = "btnExportExcel";
-            btnExportExcel.Size = new Size(119, 41);
+            btnExportExcel.Size = new Size(166, 41);
             btnExportExcel.TabIndex = 8;
             btnExportExcel.Text = "Export to Excel";
             btnExportExcel.UseVisualStyleBackColor = false;
@@ -205,9 +204,9 @@
             // btnExportPdf
             // 
             btnExportPdf.BackColor = Color.Firebrick;
-            btnExportPdf.Location = new Point(847, 304);
+            btnExportPdf.Location = new Point(847, 296);
             btnExportPdf.Name = "btnExportPdf";
-            btnExportPdf.Size = new Size(119, 41);
+            btnExportPdf.Size = new Size(166, 41);
             btnExportPdf.TabIndex = 9;
             btnExportPdf.Text = "Export to PDF";
             btnExportPdf.UseVisualStyleBackColor = false;
@@ -216,9 +215,9 @@
             // btnAuditLog
             // 
             btnAuditLog.BackColor = SystemColors.Info;
-            btnAuditLog.Location = new Point(847, 189);
+            btnAuditLog.Location = new Point(847, 108);
             btnAuditLog.Name = "btnAuditLog";
-            btnAuditLog.Size = new Size(108, 41);
+            btnAuditLog.Size = new Size(166, 41);
             btnAuditLog.TabIndex = 10;
             btnAuditLog.Text = "Audit Log";
             btnAuditLog.UseVisualStyleBackColor = false;
@@ -227,7 +226,7 @@
             // btnManagePermissions
             // 
             btnManagePermissions.BackColor = Color.Salmon;
-            btnManagePermissions.Location = new Point(618, 400);
+            btnManagePermissions.Location = new Point(847, 155);
             btnManagePermissions.Name = "btnManagePermissions";
             btnManagePermissions.Size = new Size(166, 41);
             btnManagePermissions.TabIndex = 11;
@@ -241,7 +240,7 @@
             statusStrip1.Items.AddRange(new ToolStripItem[] { lblStatusUser, lblStatusSep, lblStatusTime });
             statusStrip1.Location = new Point(0, 467);
             statusStrip1.Name = "statusStrip1";
-            statusStrip1.Size = new Size(973, 26);
+            statusStrip1.Size = new Size(1028, 26);
             statusStrip1.TabIndex = 12;
             statusStrip1.Text = "statusStrip1";
             // 
@@ -272,19 +271,30 @@
             // 
             // btnChangePassword
             // 
-            btnChangePassword.Location = new Point(830, 400);
+            btnChangePassword.Location = new Point(847, 343);
             btnChangePassword.Name = "btnChangePassword";
-            btnChangePassword.Size = new Size(136, 41);
+            btnChangePassword.Size = new Size(166, 41);
             btnChangePassword.TabIndex = 13;
             btnChangePassword.Text = "Change Password";
             btnChangePassword.UseVisualStyleBackColor = true;
             btnChangePassword.Click += btnChangePassword_Click;
             // 
+            // btnViewBilling
+            // 
+            btnViewBilling.Location = new Point(847, 202);
+            btnViewBilling.Name = "btnViewBilling";
+            btnViewBilling.Size = new Size(166, 41);
+            btnViewBilling.TabIndex = 14;
+            btnViewBilling.Text = "View Billing";
+            btnViewBilling.UseVisualStyleBackColor = true;
+            btnViewBilling.Click += btnViewBilling_Click;
+            // 
             // CustomerListForm
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(973, 493);
+            ClientSize = new Size(1028, 493);
+            Controls.Add(btnViewBilling);
             Controls.Add(btnChangePassword);
             Controls.Add(statusStrip1);
             Controls.Add(btnManagePermissions);
@@ -336,5 +346,6 @@
         private System.Windows.Forms.Timer statusTimer;
         private ToolStripStatusLabel lblStatusTime;
         private Button btnChangePassword;
+        private Button btnViewBilling;
     }
 }

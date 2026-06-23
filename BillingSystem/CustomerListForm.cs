@@ -54,11 +54,6 @@ namespace BillingSystem
             LoadCustomers();
         }
 
-        private void dgvCustomers_CellContentClick(object sender, DataGridViewCellEventArgs e)
-        {
-
-        }
-
         private void CustomerListForm_Load(object sender, EventArgs e)
         {
             ApplyTheme();
@@ -91,22 +86,16 @@ namespace BillingSystem
                     {
                         DataTable dt = new DataTable();
                         sda.Fill(dt);
+
                         // Bind the DataTable to the grid
                         dgvCustomers.DataSource = dt;
 
-                        // Improve column headers for readability
-                        if (dgvCustomers.Columns.Count > 0)
-                        {
-                            dgvCustomers.Columns["CustomerID"].DataPropertyName = "CustomerID";
-                            dgvCustomers.Columns["FullName"].DataPropertyName = "FullName";
-                            dgvCustomers.Columns["Address"].DataPropertyName = "Address";
-                            dgvCustomers.Columns["ContactNumber"].DataPropertyName = "ContactNumber";
-                            dgvCustomers.Columns["Email"].DataPropertyName = "Email";
-                            dgvCustomers.Columns["Balance"].DataPropertyName = "Balance";
-                        }
+                        dgvCustomers.ClearSelection();
+                        dgvCustomers.CurrentCell = null;
+                        _selectedCustomerId = 0;
 
                         lblTitle.Text = $"Customer List  ({dt.Rows.Count} record(s))";
-
+                        
                         conn.Close();
 
                     }
@@ -152,6 +141,10 @@ namespace BillingSystem
                             adapter.Fill(dt);
 
                             dgvCustomers.DataSource = dt;
+
+                            dgvCustomers.ClearSelection();
+                            dgvCustomers.CurrentCell = null;
+                            _selectedCustomerId = 0;
 
                             lblTitle.Text = $"Customer List  ({dt.Rows.Count} result(s))";
                         }
@@ -594,6 +587,8 @@ namespace BillingSystem
             btnManagePermissions.ForeColor = Color.White;
             btnChangePassword.BackColor = AppTheme.PrimaryColor;
             btnChangePassword.ForeColor = Color.White;
+            btnViewBilling.BackColor = AppTheme.PrimaryColor;
+            btnViewBilling.ForeColor = Color.White;
 
             // DataGridView header colors
             dgvCustomers.ColumnHeadersDefaultCellStyle.BackColor = AppTheme.PrimaryColor;
@@ -609,6 +604,25 @@ namespace BillingSystem
         {
             frmChangePassword frmpass = new frmChangePassword();
             frmpass.ShowDialog();
+        }
+
+        private void btnViewBilling_Click(object sender, EventArgs e)
+        {
+            if (_selectedCustomerId == 0)
+            {
+                MessageBox.Show("Please select a customer to view billing history.",
+                    "No Selection", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                return;
+            }
+
+            int customerId = _selectedCustomerId;
+
+            AuditLogger.Log("VIEW_BILLING",
+                    $"{AppSession.CurrentUsername} view a customer billing history.");
+
+            frmBillingHistory frm = new frmBillingHistory(customerId);
+            frm.ShowDialog();
+            LoadCustomers();
         }
     }
 }
