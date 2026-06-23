@@ -73,6 +73,7 @@ namespace BillingSystem
                                     MessageBoxButtons.OK,
                                     MessageBoxIcon.Error);
 
+                                lblCustomerName.Text = $"Billing History - Customer Not Found";
                                 this.Close();
                                 return;
                             }
